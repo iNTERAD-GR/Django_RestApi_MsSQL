@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'mainApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        # 'NAME': 'pressPilot',
-        'NAME': 'django',
+        'NAME': 'pressPilot',
+        # 'NAME': 'django',
         'USER': 'sa',
         'PASSWORD': 'Topikinos2001',
         'HOST': 'localhost',
