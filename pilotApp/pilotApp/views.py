@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
 import requests
 # from coinApp.models import Coin
 from django.core.paginator import Paginator
@@ -26,7 +25,4 @@ def index(request):
     # page_obj = paginator.get_page(page_number)
     #
     # return render(request, 'index.html', {'page_obj': page_obj})
-
-def view_index(request):
-    return HttpResponse("Hello, this is a new endpoint in pilotApp!")
 
