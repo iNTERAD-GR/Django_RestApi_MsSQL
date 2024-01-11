@@ -90,34 +90,35 @@ WSGI_APPLICATION = 'mainApp.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'mssql',
-#         'NAME': 'django',
-#         'USER': 'sa',
-#         'PASSWORD': 'Topikinos2001',
-#         'HOST': 'localhost',
-#         'PORT': '1431',
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 18 for SQL Server',
-#         },
-#     },
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'pressPilot',
-        'USER': 'pressPilot',
-        'PASSWORD': '1234',
-        'HOST': '190.2.133.223',
-        'PORT': '1638',
+        'NAME': 'django',
+        'USER': 'sa',
+        'PASSWORD': 'Topikinos2001',
+        'HOST': 'localhost',
+        'PORT': '1431',
         'OPTIONS': {
-            'driver': 'ODBC Driver 18 for SQL Server',
+            'driver': 'ODBC Driver 17 for SQL Server',
             'extra_params': 'TrustServerCertificate=yes'
         },
     },
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'pressPilot2',
+#         'USER': 'pressPilot',
+#         'PASSWORD': '1234',
+#         'HOST': '190.2.133.223',
+#         'PORT': '1638',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 18 for SQL Server',
+#             'extra_params': 'TrustServerCertificate=yes'
+#         },
+#     },
+# }
 
 DATABASE_CONNECTION_POOLING = False
 
