@@ -141,7 +141,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'pilotApp.Users'
+# AUTH_USER_MODEL = 'pilotApp.Users'
 
 
 # Internationalization
