@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'django',
         'USER': 'sa',
         'PASSWORD': 'Topikinos2001',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '1431',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
