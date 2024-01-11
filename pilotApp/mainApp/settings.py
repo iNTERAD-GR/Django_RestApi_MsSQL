@@ -75,17 +75,46 @@ WSGI_APPLICATION = 'mainApp.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # https://stackoverflow.com/questions/54824864/django-python-sql-server-pyodbc-isnt-an-available-database-backend
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'pressPilot',
+#         'USER': 'pressPilot',
+#         'PASSWORD': '1234',
+#         'HOST': 'localhost',
+#         'PORT': '1431',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#         },
+#     },
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'django',
+#         'USER': 'sa',
+#         'PASSWORD': 'Topikinos2001',
+#         'HOST': 'localhost',
+#         'PORT': '1431',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 18 for SQL Server',
+#         },
+#     },
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        # 'NAME': 'pressPilot',
-        'NAME': 'django',
-        'USER': 'sa',
-        'PASSWORD': 'Topikinos2001',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'pressPilot',
+        'USER': 'pressPilot',
+        'PASSWORD': '1234',
+        'HOST': '190.2.133.223',
+        'PORT': '1638',
         'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'extra_params': 'TrustServerCertificate=yes'
         },
     },
 }
