@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pilotApp',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,25 +76,10 @@ WSGI_APPLICATION = 'mainApp.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # https://stackoverflow.com/questions/54824864/django-python-sql-server-pyodbc-isnt-an-available-database-backend
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'mssql',
-#         'NAME': 'pressPilot',
-#         'USER': 'pressPilot',
-#         'PASSWORD': '1234',
-#         'HOST': 'localhost',
-#         'PORT': '1431',
-#         'OPTIONS': {
-#             'driver': 'ODBC Driver 17 for SQL Server',
-#         },
-#     },
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'django',
+        'NAME': 'pressPilot',
         'USER': 'sa',
         'PASSWORD': 'Topikinos2001',
         'HOST': '127.0.0.1',
@@ -141,6 +127,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTH_USER_MODEL = 'pilotApp.Users'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -167,3 +155,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

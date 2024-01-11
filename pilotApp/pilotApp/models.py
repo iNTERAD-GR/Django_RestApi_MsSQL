@@ -4,7 +4,7 @@
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+#   * Remove `managed = True` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
@@ -14,6 +14,7 @@ class Articles(models.Model):
     guid = models.CharField(max_length=36)
     timestamp = models.DateTimeField(blank=True, null=True)
     email_original_timestamp = models.DateTimeField(blank=True, null=True)
+    sent_timestamp = models.DateTimeField(blank=True, null=True)
     sender_id = models.IntegerField(blank=True, null=True)
     publisher_id = models.IntegerField(blank=True, null=True)
     title = models.CharField(max_length=450, db_collation='Greek_CI_AS', blank=True, null=True)
@@ -26,11 +27,12 @@ class Articles(models.Model):
     publication_datetime = models.DateTimeField(blank=True, null=True)
     isdeleted = models.BooleanField(db_column='isDeleted', blank=True, null=True)  # Field name made lowercase.
     isactive = models.BooleanField(db_column='isActive', blank=True, null=True)  # Field name made lowercase.
+    ispublished = models.BooleanField(db_column='isPublished', blank=True, null=True)  # Field name made lowercase.
     attachments = models.IntegerField(blank=True, null=True)
     debug_info = models.TextField(db_collation='Greek_CI_AS', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'articles'
 
 
@@ -42,7 +44,7 @@ class ArticlesAttachments(models.Model):
     isattachment = models.BooleanField(db_column='isAttachment', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'articles_attachments'
         unique_together = (('article_id', 'attachment_id'),)
 
@@ -58,7 +60,7 @@ class Attachments(models.Model):
     filesize = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'attachments'
 
 
@@ -67,7 +69,7 @@ class Groups(models.Model):
     title = models.CharField(max_length=150, db_collation='Greek_CI_AS', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'groups'
 
 
@@ -91,7 +93,7 @@ class Publishers(models.Model):
     html_preview_width = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'publishers'
 
 
@@ -102,7 +104,7 @@ class SenderPriorities(models.Model):
     priority = models.SmallIntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'sender_priorities'
 
 
@@ -115,7 +117,7 @@ class Senders(models.Model):
     registration_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'senders'
 
 
@@ -125,7 +127,7 @@ class SubjectKeywordsToIgnore(models.Model):
     publisher_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'subject_keywords_to_ignore'
         unique_together = (('keyword', 'publisher_id'),)
 
@@ -136,7 +138,7 @@ class TextsToClearPerPublisher(models.Model):
     publisher_id = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'texts_to_clear_per_publisher'
 
 
@@ -148,5 +150,5 @@ class Users(models.Model):
     user_level = models.CharField(max_length=50, db_collation='Greek_CI_AS', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'users'
