@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'mainApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'django',
+        'NAME': 'pressPilot',
         'USER': 'sa',
         'PASSWORD': 'Topikinos2001',
         'HOST': '127.0.0.1',
@@ -140,6 +140,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'pilotApp.Users'
 
 
 # Internationalization
