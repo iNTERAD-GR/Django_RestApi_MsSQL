@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\laragon\www\Django_RestApi_MsSQL\pilotApp\venv"
+VIRTUAL_ENV="C:\Users\Imac-Pro\Desktop\Django_RestApi_MsSQL\pilotApp\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
